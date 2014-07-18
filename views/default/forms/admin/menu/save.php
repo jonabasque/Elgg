@@ -3,12 +3,13 @@
  * Form body for setting up site menu
  */
 
-// @todo Could probably make this number configurable
-$num_featured_items = 6;
-
 // get site menu items
 $menu = elgg_get_config('menus');
 $menu = $menu['site'];
+
+//we save the number of elements of de menu array
+$num_featured_items = count($menu);
+
 $builder = new ElggMenuBuilder($menu);
 $menu = $builder->getMenu('name');
 $menu_items = $menu['default'];
